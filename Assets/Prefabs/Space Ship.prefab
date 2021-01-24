@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4239542597541368794}
   - component: {fileID: 2103487575557138192}
   - component: {fileID: 2950176039730288331}
-  - component: {fileID: 2950176039730288337}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -100,18 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.86484116, y: 0.32853356, z: 1.3358221}
   m_Center: {x: 0, y: 0.1642599, z: 0}
---- !u!114 &2950176039730288337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446395940189259461}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd91f570ab4c1f548a1c59311af861ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2950176040859383510
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,3 +271,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd91f570ab4c1f548a1c59311af861ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rcsThrust: 100
+  mainThrust: 1000
