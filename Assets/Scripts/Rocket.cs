@@ -33,7 +33,7 @@ public class Rocket : MonoBehaviour
         }
         else
         {
-            print("You are dead");
+            return;
         }
     }
 
