@@ -551,6 +551,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
+--- !u!1 &1880251153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5406966435038865636, guid: 04d2a68daa517a64b8980d23a95017f6, type: 3}
+  m_PrefabInstance: {fileID: 514420392179710028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1880251158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880251153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a16cec0e1ecb34f9e9fc569741fedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 20, y: 0, z: 0}
+  movementFactor: 0
 --- !u!4 &2093130315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7348056502043245419, guid: 8f16f6a78e84c3c4bb2c39b7bbbccbf0, type: 3}
@@ -681,33 +700,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 392486546048641645, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2950176040859383510, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
       propertyPath: m_Name
       value: Space Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: deathSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8053672c91b4420428c053f538e8e49a, type: 3}
-    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 3c22af6dbe192ce48ba0b205ce5af9e0, type: 3}
-    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: mainThrust
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: levelCompleteSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a5a2d28b9720f9642bc948bc7ada0364, type: 3}
-    - target: {fileID: 2950176040859383512, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
-      propertyPath: m_Constraints
-      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 2950176040859383514, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
       propertyPath: m_RootOrder
@@ -719,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950176040859383514, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.79
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 2950176040859383514, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
       propertyPath: m_LocalPosition.z
