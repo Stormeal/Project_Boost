@@ -8,8 +8,8 @@ public class Rocket : MonoBehaviour
     AudioSource audioSource;
     private Game game;
 
-    [SerializeField] public Image imgLife1, imgLife2, imgLife3;
-    [SerializeField] private static int health = 3;
+    [SerializeField] Image imgLife1, imgLife2, imgLife3;
+    [SerializeField] static int health = 3;
     [SerializeField] float rcsThrust = 1000f;
     [SerializeField] float mainThrust = 10f;
     [SerializeField] AudioClip mainEngine;
@@ -116,6 +116,7 @@ public class Rocket : MonoBehaviour
         if (health == 0)
         {
             Invoke("LoadFirstLevel", 2f);
+            health = 3;
 
         }
         else
@@ -138,7 +139,7 @@ public class Rocket : MonoBehaviour
     {
         game.ReloadCurrentLevel();
     }
-   
+
 
     private void RespondToThrustInput()
     {

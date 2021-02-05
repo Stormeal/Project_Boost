@@ -359,7 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851b09c9275e1134d86f03f83f18ea4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoadDelay: 2
   level: 1
   nextLevel: 0
   lastLevel: 0
@@ -3798,6 +3797,22 @@ PrefabInstance:
       objectReference: {fileID: 1026846324}
     - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
       propertyPath: imgLife3
+      value: 
+      objectReference: {fileID: 1589303257}
+    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
+      propertyPath: imgLife.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
+      propertyPath: imgLife.Array.data[0]
+      value: 
+      objectReference: {fileID: 1908347770}
+    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
+      propertyPath: imgLife.Array.data[1]
+      value: 
+      objectReference: {fileID: 1026846324}
+    - target: {fileID: 2950176040859383511, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
+      propertyPath: imgLife.Array.data[2]
       value: 
       objectReference: {fileID: 1589303257}
     - target: {fileID: 2950176040859383514, guid: e79f46aac25006f4a9b7617ad5a2472f, type: 3}
