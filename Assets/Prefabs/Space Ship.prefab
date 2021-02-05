@@ -462,12 +462,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd91f570ab4c1f548a1c59311af861ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 300
+  imgLife1: {fileID: 0}
+  imgLife2: {fileID: 0}
+  imgLife3: {fileID: 0}
+  rcsThrust: 150
   mainThrust: 2000
   mainEngine: {fileID: 8300000, guid: 3c22af6dbe192ce48ba0b205ce5af9e0, type: 3}
   levelCompleteSound: {fileID: 8300000, guid: a5a2d28b9720f9642bc948bc7ada0364, type: 3}
   deathSound: {fileID: 8300000, guid: 8053672c91b4420428c053f538e8e49a, type: 3}
   levelLoadDelay: 2
+  level: 2
+  nextLevel: 0
+  lastLevel: 1
   mainEngineParticles: {fileID: 449486401022377460}
   successParticles: {fileID: 1147652777392768449}
   deathParticles: {fileID: 1568101298563145065}

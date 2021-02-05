@@ -1,17 +1,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
     Rigidbody rigidBody;
     AudioSource audioSource;
+    private Game game;
 
+    [SerializeField] public Image imgLife1, imgLife2, imgLife3;
+    [SerializeField] private static int health = 3;
     [SerializeField] float rcsThrust = 1000f;
     [SerializeField] float mainThrust = 10f;
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip levelCompleteSound;
     [SerializeField] AudioClip deathSound;
-    [SerializeField] float levelLoadDelay = 2f;
 
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem successParticles;
@@ -25,8 +28,10 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        game = FindObjectOfType<Game>();
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        UpdateHealth();
     }
 
     // Update is called once per frame
@@ -66,6 +71,31 @@ public class Rocket : MonoBehaviour
         }
     }
 
+    private void UpdateHealth()
+    {
+        switch (health)
+        {
+            case 1:
+                imgLife1.enabled = true;
+                imgLife2.enabled = false;
+                imgLife3.enabled = false;
+                break;
+            case 2:
+                imgLife1.enabled = true;
+                imgLife2.enabled = true;
+                imgLife3.enabled = false;
+                break;
+            case 3:
+                imgLife1.enabled = true;
+                imgLife2.enabled = true;
+                imgLife3.enabled = true;
+                break;
+            default:
+                break;
+        }
+
+    }
+
 
     private void StartSuccessSequence()
     {
@@ -73,7 +103,7 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(levelCompleteSound);
         successParticles.Play();
-        Invoke("LoadNextScene", levelLoadDelay); 
+        Invoke("LoadNextLevel", 2f);
     }
     private void StartDeathSequence()
     {
@@ -81,17 +111,34 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", levelLoadDelay);
-    }
-    private void LoadFirstLevel()
-    {
-        SceneManager.LoadScene(0);
+        health--;
+        UpdateHealth();
+        if (health == 0)
+        {
+            Invoke("LoadFirstLevel", 2f);
+
+        }
+        else
+        {
+            Invoke("ReloadCurrentLevel", 2f);
+        }
     }
 
-    private void LoadNextScene()
+    private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1); // Allow for more than two levels
+        game.LoadNextLevel();
     }
+
+    private void LoadFirstLevel()
+    {
+        game.LoadFirstLevel();
+    }
+
+    private void ReloadCurrentLevel()
+    {
+        game.ReloadCurrentLevel();
+    }
+   
 
     private void RespondToThrustInput()
     {
