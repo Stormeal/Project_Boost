@@ -7,6 +7,7 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody;
     AudioSource audioSource;
     private Game game;
+    bool toggleCollision;
 
     [SerializeField] Image imgLife1, imgLife2, imgLife3;
     [SerializeField] static int health = 3;
@@ -52,6 +53,7 @@ public class Rocket : MonoBehaviour
     {
         RespondToThrustInput();
         RespondToRotateInput();
+        RespondToCKey();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -66,7 +68,10 @@ public class Rocket : MonoBehaviour
                 StartSuccessSequence();
                 break;
             default:
-                StartDeathSequence();
+                if (!toggleCollision)
+                {
+                    StartDeathSequence();
+                }
                 break;
         }
     }
@@ -179,6 +184,22 @@ public class Rocket : MonoBehaviour
             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
         rigidBody.freezeRotation = false; // resume physics control of rotation
+    }
+
+    private void RespondToCKey()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && Debug.isDebugBuild)
+        {
+            if (toggleCollision != true)
+            {
+                toggleCollision = true;
+
+            }
+            else
+            {
+                toggleCollision = false;
+            }
+        }
     }
 
 }
