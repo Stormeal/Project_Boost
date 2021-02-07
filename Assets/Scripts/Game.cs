@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     [SerializeField] int level;
     [SerializeField] int nextLevel;
     [SerializeField] bool lastLevel;
+
     void Start()
     {
         nextLevel = level + 1;
@@ -16,7 +17,10 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.L) && Debug.isDebugBuild)
+        {
+            LoadNextLevel();
+        }
     }
 
     public void LoadLevel(string levelName)
@@ -26,11 +30,8 @@ public class Game : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        //if (!lastLevel)
-        //{
         string sceneName = "Level " + nextLevel;
         LoadLevel(sceneName);
-        //}
     }
 
     public void ReloadCurrentLevel()
