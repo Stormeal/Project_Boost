@@ -9,7 +9,7 @@ public class Rocket : MonoBehaviour
     private Game game;
     bool toggleCollision;
 
-    [SerializeField] Image imgLife1, imgLife2, imgLife3;
+    [SerializeField] Image imgLife1, imgLife2, imgLife3, imgLife4, imgLife5;
     [SerializeField] static int health = 3;
     [SerializeField] float rcsThrust = 1000f;
     [SerializeField] float mainThrust = 10f;
@@ -20,6 +20,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] ParticleSystem pickupParticles;
 
 
     enum State { Alive, Dyin, Transcending };
@@ -67,6 +68,19 @@ public class Rocket : MonoBehaviour
             case "Finish":
                 StartSuccessSequence();
                 break;
+            case "Heart":
+                if (health == 5)
+                {
+                    return;
+                }
+                else
+                {
+                    Destroy(collision.gameObject);
+                    health++;
+                    pickupParticles.Play();
+                    UpdateHealth();
+                }
+                break;
             default:
                 if (!toggleCollision)
                 {
@@ -84,16 +98,36 @@ public class Rocket : MonoBehaviour
                 imgLife1.enabled = true;
                 imgLife2.enabled = false;
                 imgLife3.enabled = false;
+                imgLife4.enabled = false;
+                imgLife5.enabled = false;
                 break;
             case 2:
                 imgLife1.enabled = true;
                 imgLife2.enabled = true;
                 imgLife3.enabled = false;
+                imgLife4.enabled = false;
+                imgLife5.enabled = false;
                 break;
             case 3:
                 imgLife1.enabled = true;
                 imgLife2.enabled = true;
                 imgLife3.enabled = true;
+                imgLife4.enabled = false;
+                imgLife5.enabled = false;
+                break;
+            case 4:
+                imgLife1.enabled = true;
+                imgLife2.enabled = true;
+                imgLife3.enabled = true;
+                imgLife4.enabled = true;
+                imgLife5.enabled = false;
+                break;
+            case 5:
+                imgLife1.enabled = true;
+                imgLife2.enabled = true;
+                imgLife3.enabled = true;
+                imgLife4.enabled = true;
+                imgLife5.enabled = true;
                 break;
             default:
                 break;
